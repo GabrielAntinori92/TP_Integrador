@@ -1,10 +1,11 @@
-import java.util.ArrayList;
 
+import java.util.ArrayList;
 
 public class Main {
 
     public static void main(String[] args){
         ArrayList<Carta> mazo = new ArrayList<>();
+        GanadorDao ganador_save = new GanadorDao();
 
         for(int i=0; i<50; i++){
             mazo.add(new Carta(i+1));
@@ -43,6 +44,8 @@ public class Main {
             t4.join();
         }catch (Exception e){}
 
-        r1.determinarGanador();
+        ganador_save.insertGanador(r1.determinarGanador());
+
+
     }
 }

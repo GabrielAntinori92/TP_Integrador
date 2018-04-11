@@ -52,7 +52,7 @@ public class Repartidor extends Observable implements Observer {
 
     }
 
-    public void determinarGanador(){
+    public Jugador determinarGanador(){
         Jugador ganador = jugadores.get(0);
         String msg;
 
@@ -64,5 +64,7 @@ public class Repartidor extends Observable implements Observer {
         msg = "Ganador: " + ganador.getNombre() + " Puntos: " + ganador.getPuntos();
         setChanged();
         notifyObservers(msg);
+
+        return ganador;
     }
 }
